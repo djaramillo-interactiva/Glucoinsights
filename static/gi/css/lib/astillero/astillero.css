@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+@import "theme.css";
+@import "_buttons.css";
+@import "_basics.css";
+@import "_fields.css";
+@import "_states.css";
+@import "_tables.css";
+
+
+/* Typography */
+h1 {
+  font-size: 23px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--secondary);
+}
+
+h4 {
+  font-size: 15px;
+  font-weight: bold;
+  color: var(--text-gray, #6E6E6E);
+}
+
+h5 {
+  font-size: 1rem;
+  font-weight: bold; }
+
+h6 {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--text-gray);
+}
+
+p {
+  color: #666;
+  font-size: 15px;
+}
+
+.min-w-250px{
+  min-width: 250px;
+}
+.min-w-350px{
+  min-width: 350px;
+}
+
+
+small
+
+legend
+
+dl

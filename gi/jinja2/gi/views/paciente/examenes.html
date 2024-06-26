@@ -1,0 +1,59 @@
+{% extends "gi/views/paciente/base.html" %}
+{% import 'gi/app/app.html' as app %}
+
+{% block main %}
+    {{ super() }}
+    <div id="paciente-examenes-app"></div>
+{% endblock %}
+
+{% block bottom %}
+    {{ super() }}
+    <script>
+        let pacienteExamenes;
+        window.addEventListener('DOMContentLoaded', (event) => {
+            pacienteExamenes = new app.pacienteExamenes({
+                target: document.getElementById('paciente-examenes-app'),
+                props: {
+                    data: {{ data|tojson }},
+                    filters: [
+                        {
+                            label: 'Periodo',
+                            slug: 'periodo',
+                            options: [
+                                {
+                                    label: 'Mes actual',
+                                    value: 'mes_actual'
+                                },
+                                {
+                                    label: 'Mes anterior',
+                                    value: 'mes_anterior'
+                                },
+                                {
+                                    label: 'Trimestre actual',
+                                    value: 'trimestre_actual'
+                                },
+                                {
+                                    label: 'Trimestre anterior',
+                                    value: 'trimestre_anterior'
+                                },
+                                {
+                                    label: 'Año actual',
+                                    value: 'anio_actual'
+                                },
+                                {
+                                    label: 'Año anterior',
+                                    value: 'anio_anterior'
+                                },
+                            ]
+                        }
+                    ]
+                }
+            });
+            pacienteExamenes.$on('guardarExamen', (event)=>{
+                submitData(event.detail, 'POST', '{{ url('gi:examenes-paciente', kwargs={'id_paciente': id_paciente}) }}').then((response) => {
+                    pacienteExamenes.upsertExamen(response);
+                });
+            });
+        });
+    </script>
+{% endblock %}

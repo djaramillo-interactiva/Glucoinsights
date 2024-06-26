@@ -1,0 +1,138 @@
+{% extends "gi/partials/base.html" %}
+{% import 'gi/app/app.html' as app %}
+
+{% block main %}
+    <div class="py-15">
+        <div id="admin-usuarios-app">
+        </div>
+    </div>
+{% endblock %}
+
+{% block bottom %}
+    <script>
+        let adminUsers;
+        window.addEventListener('DOMContentLoaded', (event) => {
+            const routeApiAdminUsers = '{{ url('gi:api-admin-usuarios') }}';
+            const adminUsers = new app.administracionUsuarios({
+                target: document.querySelector('#admin-usuarios-app'),
+                props: {
+                    data: {{ data|tojson }},
+                    grupos_gestion: {{ grupos_gestion|tojson }},
+                    count: {{ total }},
+                    pages: {{ pages }},
+                    paginate: true,
+                    filters: [
+                        {
+                            slug: 'grupos_gestion',
+                            label: 'Grupo de gestión',
+                            options: {{ grupos_gestion|tojson }}
+                        },
+                        {
+                            slug: 'ciudad',
+                            label: 'Ciudad',
+                            options: {{ cities|tojson }}
+                        },
+                        {
+                            slug: 'todos_grupos_gestion',
+                            label: '¿Todos los grupos de gestión?',
+                            options: [
+                                {
+                                    label: 'Sí',
+                                    value: true
+                                },
+                                {
+                                    label: 'No',
+                                    value: false
+                                }
+                            ]
+                        }
+                    ],
+                    columns: [
+                        {
+                            slug: 'id',
+                            label: '',
+                            type: 'checkbox',
+                            width: 'max-content',
+                            order: false
+                        },
+                        {
+                            slug: 'name',
+                            label: 'Nombre',
+                            class: '',
+                            width: '500px',
+                            type: 'text',
+                            order: true
+                        },
+                        {
+                            slug: 'todos_grupos_gestion',
+                            label: '¿Todos los grupos de gestion?',
+                            class: '',
+                            type: 'text',
+                            order: true
+                        },
+                        {
+                            slug: 'grupos_gestion',
+                            label: 'Grupos de gestión',
+                            class: '',
+                            type: 'list',
+                            order: false
+                        },
+                        {
+                            slug: 'mail',
+                            label: 'Correo',
+                            class: '',
+                            type: 'text',
+                            order: true
+                        },
+                        {
+                            slug: 'actions',
+                            width:'70px',
+                            label: '',
+                            class: '',
+                            type: 'actions',
+                        }
+                    ]
+                }
+            });
+            adminUsers.$on('filter', (evt) => {
+                getUsers().then((items) => {
+                    adminUsers.updateData(items);
+                }).catch(() => {
+                    alert(`Se genero un error consultando la página: ${evt.detail}`);
+                });
+            });
+            adminUsers.$on('next', (evt) => {
+                getUsers().then((items) => {
+                    adminUsers.updateData(items);
+                }).catch(() => {
+                    alert(`Se genero un error consultando la página: ${evt.detail}`);
+                });
+            });
+            adminUsers.$on('save', (evt) => {
+                submitData(evt.detail, evt.detail.id ? 'put' : 'post', '{{ url('gi:admin-update-user') }}')
+                    .then(res => {
+                        return getUsers();
+                    })
+                    .then(items => {
+                        adminUsers.updateData(items);
+                    })
+            })
+            adminUsers.$on('delete', (evt) => {
+                httpRequest({
+                    url: '{{ url('gi:admin-update-user') }}',
+                    method: 'delete',
+                    data: {
+                        users: (evt.detail || []).map(i => i.id)
+                    }
+                }).then(() => {
+                    adminUsers.refresh();
+                }).catch(() => {
+                });
+            });
+
+            function getUsers() {
+                return submitData(adminUsers.getParams(), 'get', routeApiAdminUsers);
+            }
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,77 @@
+.state-code-0{
+  background-color: var(--state-code-0);
+}
+.state-code-1{
+  background-color: var(--state-code-1);
+}
+.state-code-2{
+  background-color: var(--state-code-2);
+}
+.state-code-3{
+  background-color: var(--state-code-3);
+}
+.state-code-4{
+  background-color: var(--state-code-4);
+}
+.state-code-5{
+  background-color: var(--state-code-5);
+}
+.state-code-6{
+  background-color: var(--state-code-6);
+}
+.state-code-7{
+  background-color: var(--state-code-7);
+}
+.state-code-8{
+  background-color: var(--state-code-8);
+}
+.state-code-9{
+  background-color: var(--state-code-9);
+}
+.state-code-10{
+  background-color: var(--state-code-10);
+}
+
+
+.state-code-20{
+  background-color: var(--state-code-1);
+}
+.state-code-21{
+  background-color: var(--state-code-2);
+}
+.state-code-22{
+  background-color: var(--state-code-3);
+}
+.state-code-23{
+  background-color: var(--accent);
+}
+.state-code-24{
+  background-color: var(--state-code-4);
+}
+.state-code-25{
+  background-color: var(--state-code-6);
+}
+.state-code-26{
+  background-color: var(--state-code-0);
+}
+
+
+blockquote{
+  margin: 0;
+  padding:0.5rem 1rem;
+  background: var(--back-gray, #f5f5f5);
+  width: max-content;
+  border-left:8px solid var(--border-color, #CCCCCC);
+}
+
+.naui-tag{
+  border:1px solid var(--border-color);
+  color: var(--border-color);
+  padding:.3rem 1rem;
+  border-radius: 2rem;
+  background: #fafafa;
+  font-size: .8rem;
+}
+.naui-tag span{
+  font-size: .8rem;
+}

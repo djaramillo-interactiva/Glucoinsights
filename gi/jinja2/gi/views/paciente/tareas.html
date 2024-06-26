@@ -1,0 +1,32 @@
+{% extends "gi/views/paciente/base.html" %}
+{% import 'gi/app/app.html' as app %}
+
+{% block main %}
+    {{ super() }}
+    <div class="py-15">
+        <div id="paciente-tareas-app"></div>
+    </div>
+{% endblock %}
+
+{% block bottom %}
+    {{ super() }}
+    <script>
+        let pacienteTareas;
+        window.addEventListener('DOMContentLoaded', (event) => {
+            pacienteTareas = new app.pacienteTareas({
+                target: document.getElementById('paciente-tareas-app'),
+                props: {
+                    grupos: {{ grupos|tojson }},
+                    medicamentos: {{ medicamentos_paciente|tojson }},
+                    medicamentosOptions: {{ medicamentos|tojson }}
+                }
+            });
+
+            pacienteTareas.$on('submit', (event) => {
+                submitData(event.detail, 'POST', '').then((response) => {
+                    alert('Los datos se almacenaron correctamente');
+                });
+            })
+        });
+    </script>
+{% endblock %}

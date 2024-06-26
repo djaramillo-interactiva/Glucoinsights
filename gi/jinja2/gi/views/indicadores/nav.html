@@ -1,0 +1,24 @@
+{% set nav=[
+    {
+        "label":"DM",
+        "route":url('gi:indicadores-dm'),
+        "slug":"indicadores-dm"
+    },
+    {
+        "label":"HTA",
+        "route":url('gi:indicadores-hta'),
+        "slug":"indicadores-hta"
+    },
+    {
+        "label":"ERC",
+        "route":url('gi:indicadores-erc'),
+        "slug":"indicadores-erc"
+    },
+    {
+        "label":"OTROS",
+        "route":url('gi:indicadores-otros'),
+        "slug":"indicadores-otros"
+    }
+] %}
+
+{{ app.nav(data=nav, active=active) }}

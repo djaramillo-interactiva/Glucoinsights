@@ -1,0 +1,83 @@
+<header class="header shadow px-15" style="height: 50px">
+    <div class="box-b h-100">
+        <div>
+            <div class="box-l sx-ii">
+                {% if backlink %}
+                    <a href="{{ backlink }}" class="btn-icon">
+                        <span class="material-icons-outlined accent">arrow_back</span>
+                    </a>
+                {% endif %}
+                <h2 class="text">{{ title }}</h2>
+            </div>
+        </div>
+        <div class="box-r sx-1">
+            <div class="box-l sx-iii">
+                <span class="material-icons outlined">account_circle</span>
+                {% if request.user.is_anonymous %}
+                    <p>Usuario anonimo</p>
+                {% else %}
+                    <p>{{ request.user.username }}</p>
+                {% endif %}
+            </div>
+
+            <div class="relative">
+                <div class="btn-icon" onclick="userMenuToggle()">
+                    <span class="material-icons secondary">more_vert</span>
+                </div>
+                <div id="user-menu" class="user-menu shadow radius absolute hidden">
+                    <a href="{{ url('gi:indicadores') }}" class="box-l sx-ii py-iii px-1 user-menu-item">
+                        <span class="material-icons-outlined secondary">settings</span>
+                        <i class="fal fa-cog secondary"></i>
+                        <span class="primary">Parámetros</span>
+                    </a>
+                    <!-- <a href="{{ url('gi:administracion-usuarios') }}" class="box-l sx-ii py-iii px-1 user-menu-item">
+                        <span class="material-icons-outlined secondary">people</span>
+                        <span class="primary">Usuarios</span>
+                    </a> -->
+                    <a href="{{ url('gi:logout') }}" class="box-l sx-ii py-iii px-1 user-menu-item">
+                        <span class="material-icons-outlined secondary">logout</span>
+                        <span class="primary">Cerrar sesión</span>
+                    </a>
+                </div>
+                <div id="user-menu-backdrop" class="edges-0 fixed hidden" onclick="userMenuToggle()"></div>
+            </div>
+        </div>
+    </div>
+</header>
+<style>
+    #user-menu {
+        right: 0;
+        background: white;
+        border: 1px solid #eee;
+        overflow: hidden;
+        z-index: 99;
+    }
+
+    #user-menu span {
+        width: max-content;
+    }
+
+    #user-menu-backdrop {
+        z-index: 90;
+    }
+
+    .user-menu-item {
+        background: white;
+        transition: .1s;
+        cursor: pointer;
+    }
+
+    .user-menu-item:hover {
+        background: #f4f5f6;
+    }
+
+    .user-menu-item:active {
+        background: #f0f1f2;
+    }
+</style>
+<script>
+    function userMenuToggle() {
+        document.querySelector('#user-menu').classList.toggle('hidden');
+        document.querySelector('#user-menu-backdrop').classList.toggle('hidden');
+    }
+</script>

@@ -1,0 +1,272 @@
+{
+  "grupos_etareos": [
+    { "nombre": "Niños", "fecha_inicio": 0, "fecha_fin": 14 },
+    { "nombre": "Jóvenes", "fecha_inicio": 14, "fecha_fin": 25 },
+    { "nombre": "Adultos", "fecha_inicio": 25, "fecha_fin": 60 },
+    { "nombre": "Adultos mayores", "fecha_inicio": 60, "fecha_fin": 90 }
+  ],
+  "indicadores": [
+    {
+      "title": "Indicadores HTA",
+      "indicadores":[
+        {
+          "indicador": "1 Indidencia HTA",
+          "slug": "indicador-1",
+          "descripcion": "Pacientes afiliados (Activos y Suspendidos) con diagnóstico nuevo de hipertensión arterial en el último año.",
+          "meta": 80
+        },
+        {
+          "indicador": "1 Indidencia HTA",
+          "slug": "indicador-1",
+          "descripcion": "Pacientes afiliados (Activos y Suspendidos) con diagnóstico nuevo de hipertensión arterial en el último año.",
+          "meta": 80
+        },
+        {
+          "indicador": "1 Indidencia HTA",
+          "slug": "indicador-1",
+          "descripcion": "Pacientes afiliados (Activos y Suspendidos) con diagnóstico nuevo de hipertensión arterial en el último año.",
+          "meta": 80
+        },
+        {
+          "indicador": "1 Indidencia HTA",
+          "slug": "indicador-1",
+          "descripcion": "Pacientes afiliados (Activos y Suspendidos) con diagnóstico nuevo de hipertensión arterial en el último año.",
+          "meta": 80
+        },
+        {
+          "indicador": "1 Indidencia HTA",
+          "slug": "indicador-1",
+          "descripcion": "Pacientes afiliados (Activos y Suspendidos) con diagnóstico nuevo de hipertensión arterial en el último año.",
+          "meta": 80
+        }
+      ]
+    },
+    {
+      "title": "Indicadores DM",
+      "indicadores":[
+        {
+          "indicador": "1 Indidencia HTA",
+          "slug": "indicador-1",
+          "descripcion": "Pacientes afiliados (Activos y Suspendidos) con diagnóstico nuevo de hipertensión arterial en el último año.",
+          "meta": 80
+        },
+        {
+          "indicador": "1 Indidencia HTA",
+          "slug": "indicador-1",
+          "descripcion": "Pacientes afiliados (Activos y Suspendidos) con diagnóstico nuevo de hipertensión arterial en el último año.",
+          "meta": 80
+        },
+        {
+          "indicador": "1 Indidencia HTA",
+          "slug": "indicador-1",
+          "descripcion": "Pacientes afiliados (Activos y Suspendidos) con diagnóstico nuevo de hipertensión arterial en el último año.",
+          "meta": 80
+        },
+        {
+          "indicador": "1 Indidencia HTA",
+          "slug": "indicador-1",
+          "descripcion": "Pacientes afiliados (Activos y Suspendidos) con diagnóstico nuevo de hipertensión arterial en el último año.",
+          "meta": 80
+        },
+        {
+          "indicador": "1 Indidencia HTA",
+          "slug": "indicador-1",
+          "descripcion": "Pacientes afiliados (Activos y Suspendidos) con diagnóstico nuevo de hipertensión arterial en el último año.",
+          "meta": 80
+        }
+      ]
+    },
+    {
+      "title": "Indicadores ERC",
+      "indicadores":[
+        {
+          "indicador": "1 Indidencia HTA",
+          "slug": "indicador-1",
+          "descripcion": "Pacientes afiliados (Activos y Suspendidos) con diagnóstico nuevo de hipertensión arterial en el último año.",
+          "meta": 80
+        },
+        {
+          "indicador": "1 Indidencia HTA",
+          "slug": "indicador-1",
+          "descripcion": "Pacientes afiliados (Activos y Suspendidos) con diagnóstico nuevo de hipertensión arterial en el último año.",
+          "meta": 80
+        },
+        {
+          "indicador": "1 Indidencia HTA",
+          "slug": "indicador-1",
+          "descripcion": "Pacientes afiliados (Activos y Suspendidos) con diagnóstico nuevo de hipertensión arterial en el último año.",
+          "meta": 80
+        },
+        {
+          "indicador": "1 Indidencia HTA",
+          "slug": "indicador-1",
+          "descripcion": "Pacientes afiliados (Activos y Suspendidos) con diagnóstico nuevo de hipertensión arterial en el último año.",
+          "meta": 80
+        },
+        {
+          "indicador": "1 Indidencia HTA",
+          "slug": "indicador-1",
+          "descripcion": "Pacientes afiliados (Activos y Suspendidos) con diagnóstico nuevo de hipertensión arterial en el último año.",
+          "meta": 80
+        }
+      ]
+    },
+    {
+      "title": "Otros",
+      "indicadores":[
+        {
+          "indicador": "1 Indidencia HTA",
+          "slug": "indicador-1",
+          "descripcion": "Pacientes afiliados (Activos y Suspendidos) con diagnóstico nuevo de hipertensión arterial en el último año.",
+          "meta": 80
+        },
+        {
+          "indicador": "1 Indidencia HTA",
+          "slug": "indicador-1",
+          "descripcion": "Pacientes afiliados (Activos y Suspendidos) con diagnóstico nuevo de hipertensión arterial en el último año.",
+          "meta": 80
+        },
+        {
+          "indicador": "1 Indidencia HTA",
+          "slug": "indicador-1",
+          "descripcion": "Pacientes afiliados (Activos y Suspendidos) con diagnóstico nuevo de hipertensión arterial en el último año.",
+          "meta": 80
+        },
+        {
+          "indicador": "1 Indidencia HTA",
+          "slug": "indicador-1",
+          "descripcion": "Pacientes afiliados (Activos y Suspendidos) con diagnóstico nuevo de hipertensión arterial en el último año.",
+          "meta": 80
+        },
+        {
+          "indicador": "1 Indidencia HTA",
+          "slug": "indicador-1",
+          "descripcion": "Pacientes afiliados (Activos y Suspendidos) con diagnóstico nuevo de hipertensión arterial en el último año.",
+          "meta": 80
+        }
+      ]
+    },
+    {
+      "title": "Indicadores individuales",
+      "indicadores":[
+        {
+          "indicador": "1 Indidencia HTA",
+          "slug": "indicador-1",
+          "descripcion": "Pacientes afiliados (Activos y Suspendidos) con diagnóstico nuevo de hipertensión arterial en el último año.",
+          "meta": 80
+        },
+        {
+          "indicador": "1 Indidencia HTA",
+          "slug": "indicador-1",
+          "descripcion": "Pacientes afiliados (Activos y Suspendidos) con diagnóstico nuevo de hipertensión arterial en el último año.",
+          "meta": 80
+        },
+        {
+          "indicador": "1 Indidencia HTA",
+          "slug": "indicador-1",
+          "descripcion": "Pacientes afiliados (Activos y Suspendidos) con diagnóstico nuevo de hipertensión arterial en el último año.",
+          "meta": 80
+        },
+        {
+          "indicador": "1 Indidencia HTA",
+          "slug": "indicador-1",
+          "descripcion": "Pacientes afiliados (Activos y Suspendidos) con diagnóstico nuevo de hipertensión arterial en el último año.",
+          "meta": 80
+        },
+        {
+          "indicador": "1 Indidencia HTA",
+          "slug": "indicador-1",
+          "descripcion": "Pacientes afiliados (Activos y Suspendidos) con diagnóstico nuevo de hipertensión arterial en el último año.",
+          "meta": 80
+        }
+      ]
+    }
+  ],
+  "tareas": [
+    {
+      "nombre": "Tareas A",
+      "data": [
+        {
+          "label": "Servicio lorem",
+          "value": 1
+        },
+        {
+          "label": "Servicio lorem",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "nombre": "Tareas A",
+      "data": [
+        {
+          "label": "Servicio lorem",
+          "value": 1
+        },
+        {
+          "label": "Servicio lorem",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "grupos_pacientes": [
+    {
+      "nombre": "Grupo lorem ipsum",
+      "slug": "grupo-1234",
+      "total": 20
+    },
+    {
+      "nombre": "Grupo lorem ipsum",
+      "slug": "grupo-1234",
+      "total": 20
+    },
+    {
+      "nombre": "Grupo lorem ipsum",
+      "slug": "grupo-1234",
+      "total": 20
+    },
+    {
+      "nombre": "Grupo lorem ipsum",
+      "slug": "grupo-1234",
+      "total": 20
+    },
+    {
+      "nombre": "Grupo lorem ipsum",
+      "slug": "grupo-1234",
+      "total": 20
+    },
+    {
+      "nombre": "Grupo lorem ipsum",
+      "slug": "grupo-1234",
+      "total": 20
+    },
+    {
+      "nombre": "Grupo lorem ipsum",
+      "slug": "grupo-1234",
+      "total": 20
+    }
+  ],
+  "medicacion": [
+    {
+      "label": "Medicamento lorem",
+      "value": 50
+    },
+    {
+      "label": "Medicamento lorem",
+      "value": 50
+    },
+    {
+      "label": "Medicamento lorem",
+      "value": 50
+    },
+    {
+      "label": "Medicamento lorem",
+      "value": 50
+    },
+    {
+      "label": "Medicamento lorem",
+      "value": 50
+    }
+  ]
+}

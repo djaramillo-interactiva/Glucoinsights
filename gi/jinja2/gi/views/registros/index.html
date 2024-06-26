@@ -1,0 +1,67 @@
+{% extends "gi/partials/base.html" %}
+{% import 'gi/app/app.html' as app %}
+
+{% block main %}
+    {{ app.nav(data=nav, active=active) }}
+    <div id="svelte-app"></div>
+
+    <div class="errores">
+        <!-- {% if errores %}
+            <h3>Errores en el archivo:</h3>
+            <ul>
+                {% for error in errores %}
+                    <li>Error en el campo {{ error.columna }}: {{ error.mensaje_error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% if counter %}
+            <h3>Fila en el archivo:</h3>
+            <ul>
+                {% for count in counter %}
+                    <li>Error en el campo {{ count.Numero_filas }}: {{ count.numero_documento }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %} -->
+
+
+        {% if descargar_excel_url %}
+
+            <div class="box-l sx-ii">
+                <a href="{{ descargar_excel_url }}" class="btn stroked small">Descargar Reporte Errores</a>
+            </div>
+
+        {% endif %}
+        
+    </div>
+{% endblock %}
+
+{% block bottom %}
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            let svelteApp = new app.registros({
+                target: document.getElementById('svelte-app'),
+                props: {
+                    templateUrl: {{ template_url | tojson }},
+                    data: {{ data | tojson }},
+                    months: {{ months|tojson }},
+                    years: {{ years|tojson }},
+                    columns: {{ columns|tojson }},
+                }
+            });
+            svelteApp.$on('save', (ev) => {
+                submitData(ev.detail, 'POST', '').then(res => {
+                    alert(res.message);
+                    location.reload();
+                });
+            });
+            svelteApp.$on('delete', (ev) => {
+                if (confirm('¿Desea eliminar estos registros y todos los datos asociados?')) {
+                    submitData(ev.detail, 'DELETE', '').then(res => {
+                        alert(res.message);
+                        location.reload();
+                    });
+                }
+            });
+        });
+    </script>
+{% endblock %}

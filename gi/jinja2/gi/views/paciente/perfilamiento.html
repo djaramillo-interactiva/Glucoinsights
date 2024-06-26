@@ -1,0 +1,39 @@
+{% extends "gi/views/paciente/base.html" %}
+{% import 'gi/app/app.html' as app %}
+
+{% block main %}
+    {{ super() }}
+    <div class="py-15">
+        <div id="paciente-perfilamiento-app"></div>
+    </div>
+{% endblock %}
+
+{% block bottom %}
+    {{ super() }}
+    <script>
+        let pacientePerfilamiento;
+
+        window.addEventListener('DOMContentLoaded', (event) => {
+            pacientePerfilamiento = new app.pacientePerfilamiento({
+                target: document.getElementById('paciente-perfilamiento-app'),
+                props: {
+                    complicaciones: {{ complicaciones|tojson }},
+                    grupos: {{ grupos|tojson }},
+                    diabetesTipos: {{ tipos_diabetes|tojson }},
+                    diagnosticos: {{ diagnosticos|tojson }},
+                    estadios_erc: {{ estadios_erc|tojson }},
+                    diagnosticosAdicionales: {{ diagnosticos_adicionales|tojson }},
+                    tratamientos: {{ tratamientos|tojson }},
+                    data: {{ diagnostico_paciente|tojson }}
+                }
+            });
+
+            pacientePerfilamiento.$on('submit', (event) => {
+                submitData(event.detail, 'POST', '').then((response) => {
+                    alert('Los datos se almacenaron correctamente');
+                    location.reload();
+                });
+            });
+        });
+    </script>
+{% endblock %}

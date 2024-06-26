@@ -1,0 +1,58 @@
+/* Tables */
+.naui-table{
+  border-collapse: collapse;
+}
+.naui-table th{
+  padding:0 .5rem;
+  background-color: var(--back-gray);
+  font-size: .9rem;
+}
+.naui-table th>div{
+  min-height: 35px;
+  display: flex;
+  align-items: center;
+  color: var(--primary);
+}
+
+.naui-table td{
+  padding:0 .5rem;
+  font-size: .9rem;
+  border-bottom: 1px solid var(--border-color);
+}
+.naui-table td>div{
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.naui-table tbody > tr:hover{
+  background-color: #fafafa;
+}
+
+.fieldset-table{
+  border-collapse: collapse;
+}
+
+.fieldset-table td:first-child{
+  padding-left: 1.5rem;
+  padding-right:.5rem;
+  width: 300px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.fieldset-table td:first-child>div{
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+}
+.fieldset-table tr:nth-child(even){
+  background-color: var(--back-gray-300);
+}
+
+.naui-table td input, .naui-table td .naui-input{
+  min-height:35px;
+  height: 35px;
+  border-radius:2px;
+  font-size:.9rem;
+  background: white;
+}

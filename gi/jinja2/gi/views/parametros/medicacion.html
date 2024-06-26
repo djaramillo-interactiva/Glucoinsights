@@ -1,0 +1,40 @@
+{% extends "gi/partials/base.html" %}
+{% import 'gi/app/app.html' as app %}
+
+{% block main %}
+    {% with active='medicacion' %}
+        {% include 'gi/views/parametros/nav.html' %}
+    {% endwith %}
+
+    <div class="py-15">
+        <div id="medicacion-app"></div>
+    </div>
+
+{% endblock %}
+
+{% block bottom %}
+    <script>
+        let medicacion;
+        window.addEventListener('DOMContentLoaded', (event) => {
+            medicacion = new app.medicacion({
+                target: document.querySelector('#medicacion-app'),
+                props:{
+                    data: {{ data|safe }},
+                    categories: {{ categories|safe }}
+                }
+            });
+
+            medicacion.$on('save', (event) => {
+                submitData(event.detail, 'post')
+                    .then(res => {
+                        if (res.data) {
+                            medicacion.data = res.data;
+                            alert('Se han guardado los cambios exitósamente');
+                        }
+                    });
+            });
+        });
+    </script>
+{% endblock %}
+
+

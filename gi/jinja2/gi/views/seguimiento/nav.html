@@ -1,0 +1,14 @@
+{% set nav=[
+    {
+        "label":"PACIENTES",
+        "route":url('gi:seguimiento-pacientes'),
+        "slug":"seguimiento-pacientes"
+    },
+    {
+        "label":"GRUPOS",
+        "route":url('gi:seguimiento-grupos'),
+        "slug":"seguimiento-grupos"
+    }
+] %}
+
+{{ app.nav(data=nav, active=active) }}

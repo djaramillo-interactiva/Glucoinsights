@@ -1,0 +1,443 @@
+{
+  "HTA": [
+    {
+      "nombre": "Incidencia HTA",
+      "slug": "indidencia-hta",
+      "descripcion": "Pacientes afiliados (Activos y Suspendidos) con diagnóstico nuevo de hipertensión arterial en el último año.",
+      "metric": {
+        "label": "Tasa",
+        "value": 4.2,
+        "target": 5.87
+      }
+    },
+    {
+      "nombre": "Prevalencia HTA",
+      "slug": "prevalencia-hta",
+      "descripcion": "Expresa la proporción de casos con  HTA diagnosticada  respecto a la población afiliada  (Activos y Suspendidos)>= 18  años.",
+      "metric": {
+        "label": "Porcentaje",
+        "value": 4.2,
+        "target": 5.87
+      }
+    },
+    {
+      "nombre": "Cobertura Programa HTA",
+      "slug": "cobertura-programa-hta",
+      "descripcion": "Expresa la proporción de casos con  HTA >=18 años, con valoración en los últimos 6 meses por médico, enfermera o especialista.",
+      "metric": {
+        "label": "Porcentaje",
+        "value": 80,
+        "target": 80
+      }
+    },
+    {
+      "nombre": "Control HTA en Programa",
+      "slug": "control-hta-en-programa",
+      "descripcion": "Expresa la proporción de pacientes (Activos y Suspendidos)con diagnóstico de hipertensión arterial que se encuentran en programa, quienes se encuentran con  dos cifras de tensión arterial controladas en los  últimos siete meses.",
+      "metric": {
+        "label": "Porcentaje",
+        "value": 80,
+        "target": 80
+      }
+    },
+    {
+      "nombre": "Captación HTA",
+      "slug": "captacion-hta",
+      "descripcion": "Expresa la proporción de casos con  HTA respecto a los casos esperados con diagnóstico de hipertensión arterial en personas >= 18  años.",
+      "metric": {
+        "label": "Porcentaje",
+        "value": 80,
+        "target": 80
+      }
+    },
+    {
+      "nombre": "Tamizaje para ERC (Cr) HTA",
+      "slug": "tamizaje-erc-hta",
+      "descripcion": "Expresa la proporción de pacientes (Activos y Suspendidos) con diagnóstico de hipertensión arterial a quienes se han realizado en último año estudios de tamizaje en enfermedad renal crónica.",
+      "metric": {
+        "label": "Porcentaje",
+        "value": 80,
+        "target": 80
+      }
+    },
+    {
+      "nombre": "Tamizaje para ERC (Cr+RAC) HTA",
+      "slug": "tamizaje-erc-rac-hta",
+      "descripcion": "Expresa la proporción de pacientes (Activos y Suspendidos)con diagnóstico de hipertensión arterial a quienes se han realizado en último año estudios de tamizaje en enfermedad renal crónica.",
+      "metric": {
+        "label": "Porcentaje",
+        "value": 80,
+        "target": 80
+      }
+    },
+    {
+      "nombre": "Tamizaje para Dislipidemia HTA",
+      "slug": "tamizaje-dislipidemia-hta",
+      "descripcion": "Expresa la proporción de pacientes (Activos y Suspendidos) con diagnóstico de hipertensión arterial a quienes se han realizado en último año estudios de tamizaje en Dislipidemia",
+      "metric": {
+        "label": "Porcentaje",
+        "value": 80,
+        "target": 80
+      }
+    },
+    {
+      "nombre": "Cumplimiento Micrometas HTA",
+      "slug": "cumplimiento-micrometas-hta",
+      "descripcion": "Expresa la proporción de cumplimiento de micrometa mes de diagnóstico de HTA asignado",
+      "metric": {
+        "label": "Porcentaje",
+        "value": 80,
+        "target": 80
+      }
+    },
+    {
+      "nombre": "Dispensación de Antihipertensivos (IECA) NW Diagnostico HTA",
+      "slug": "dispensacion-antihipertensivos-ieca",
+      "descripcion": "Expresa la proporción de pacientes (Activos y Suspendidos) con diagnóstico nuevo de hipertensión arterial con dispensación de tratamiento antihipertensivo IECA en el último mes.",
+      "metric": {
+        "label": "Porcentaje",
+        "value": 80,
+        "target": 80
+      }
+    },
+    {
+      "nombre": "Dispensación de Antihipertensivos (ARA II) NW Diagnostico HTA",
+      "slug": "dispensacion-antihipertensivos-araii",
+      "descripcion": "Expresa la proporción de pacientes (Activos y Suspendidos) con diagnóstico nuevo de hipertensión arterial con dispensación de tratamiento antihipertensivo ARA II en el último mes.",
+      "metric": {
+        "label": "Porcentaje",
+        "value": 80,
+        "target": 80
+      }
+    },
+    {
+      "nombre": "Dispensación de Antihipertensivos (TIAZIDAS) NW Diagnostico HTA",
+      "slug": "dispensacion-antihipertensivos-tiazidas",
+      "descripcion": "Expresa la proporción de pacientes (Activos y Suspendidos) con diagnóstico nuevo de hipertensión arterial con dispensación de tratamiento antihipertensivo TIAZIDAS(Hidroclorotiazida, clorotiazida, clortalidona, metolazona, indapamida) en el último mes.",
+      "metric": {
+        "label": "Porcentaje",
+        "value": 80,
+        "target": 80
+      }
+    }
+  ],
+  "DM": [
+    {
+      "nombre": "Control de tension arterial",
+      "slug": "control-hta-dm",
+      "descripcion": "Pacientes diabeticos con control cifras de tension arterial menor a 140/90",
+      "metric": {
+        "label": "Tasa",
+        "value": 0,
+        "target": 0.75
+      }
+    },
+    {
+      "nombre": "Cobertura HbA1c DM",
+      "slug": "cobertura-hba1c",
+      "descripcion": "Paciente con diagnóstico de diabetes con toma de HbA1c en los últimos 6 meses)/(Total de la poblacion de la cohorte con diagnostico de DM)",
+      "metric": {
+        "label": "Tasa",
+        "value": 0,
+        "target": 0.20
+      }
+    },
+    {
+      "nombre": "Proporción DM con HbA1c <=7",
+      "slug": "control-hba1c",
+      "descripcion": "(Pacientes con diagnóstico de diabetes mellitus con HbA1c <=7)/(Total de la poblacion de la cohorte con diagnostico de DM)",
+      "metric": {
+        "label": "Tasa",
+        "value": 0,
+        "target": 0.67
+      }
+    },
+    {
+      "nombre": "Tamizaje para LDL",
+      "slug": "tamizaje-ldl",
+      "descripcion": "(Pacientes  a quienes se han realizado en último año estudio de tamizaje de LDL)/(Total de la poblacion de la cohorte con diagnostico de DM)",
+      "metric": {
+        "label": "Tasa",
+        "value": 0,
+        "target": 0.80
+      }
+    },
+    {
+      "nombre": "Meta LDL",
+      "slug": "meta-ldl",
+      "descripcion": "(Pacientes con diagnóstico de DM a quienes tienen nivel de LDL menor de 100mg/dl)/(Total de la poblacion de la cohorte con diagnostico de DM).",
+      "metric": {
+        "label": "Porcentaje",
+        "value": 0,
+        "target": 0.40
+      }
+    },
+    {
+      "nombre": "Prevalencia DM",
+      "slug": "prevalencia-dm",
+      "descripcion": "Expresa la proporción de casos con DM diagnosticada respecto a la población afiliada mayor de 18 años.",
+      "metric": {
+        "label": "Porcentaje",
+        "value": 4.2,
+        "target": 5.87
+      }
+    },
+    {
+      "nombre": "IMC Normal",
+      "slug": "imc-normal",
+      "descripcion": "(pacientes con diagnóstico de DM con nivel de IMC entre 20-25)/(Total de la poblacion de la cohorte con diagnostico de DM).",
+      "metric": {
+        "label": "Porcentaje",
+        "value": 0,
+        "target": 0.55
+      }
+    },
+    {
+      "nombre": "Cobertura Programa DM",
+      "slug": "cobertura-programa-dm",
+      "descripcion": "Expresa la proporción de casos con DM mayores de 18 años, con valoración en los últimos 6 meses por médico, enfermera o especialista.",
+      "metric": {
+        "label": "Porcentaje",
+        "value": 4.2,
+        "target": 5.87
+      }
+    },
+    {
+      "nombre": "Control DM en Programa",
+      "slug": "control-dm-programa",
+      "descripcion": "Expresa la proporción de pacientes con diagnóstico de DM que se encuentran en programa, quienes se encuentran con HbA1C en metas últimos seis meses.",
+      "metric": {
+        "label": "Porcentaje",
+        "value": 4.2,
+        "target": 5.87
+      }
+    },
+    {
+      "nombre": "Hospitalización DM",
+      "slug": "hospitalizacion-dm",
+      "descripcion": "Paciente con diabetes mellitus con hospitalización por descompensación de diabetes, cetoacidosis diabetica, coma hiperosmolar, hipoglicemia, pie diabetico.",
+      "metric": {
+        "label": "Porcentaje",
+        "value": 4.2,
+        "target": 5.87
+      }
+    },
+    {
+      "nombre": "Proporción DM con HbA1c >=9",
+      "slug": "proporcion-dm-con-hba1c-mayor-9",
+      "descripcion": "Pacientes con diagnóstico de diabetes mellitus con HbA1c >=9",
+      "metric": {
+        "label": "Porcentaje",
+        "value": 4.2,
+        "target": 5.87
+      }
+    },
+    {
+      "nombre": "Cobertura de HbA1c DM",
+      "slug": "cobertura-hba1c-dm",
+      "descripcion": "Paciente con diagnóstico de diabetes con toma de HbA1c en los últimos 6 meses",
+      "metric": {
+        "label": "Porcentaje",
+        "value": 4.2,
+        "target": 5.87
+      }
+    },
+    {
+      "nombre": "Tamizaje para ERC (Cr) DM",
+      "slug": "tamizaje-erc-dm",
+      "descripcion": "Paciente con diabetes con toma de creatinina en los últimos 12 meses/pacientes con diabetes",
+      "metric": {
+        "label": "Porcentaje",
+        "value": 4.2,
+        "target": 5.87
+      }
+    },
+    {
+      "nombre": "Tamizaje para ERC (Cr+RAC) DM",
+      "slug": "tamizaje-erc-rac-dm",
+      "descripcion": "Paciente con diabetes con relación albuminuria/creatinuria en los últimos 12 meses",
+      "metric": {
+        "label": "Porcentaje",
+        "value": 4.2,
+        "target": 5.87
+      }
+    },
+    {
+      "nombre": "Tasa Incidencia Amputación MI",
+      "slug": "tasa-incidencia-amputacion-mi",
+      "descripcion": "Pacientes diabeticos con amputación de miembro inferior en el periodo",
+      "metric": {
+        "label": "Porcentaje",
+        "value": 4.2,
+        "target": 5.87
+      }
+    },
+    {
+      "nombre": "Prevalencia Amputación MI",
+      "slug": "prevalencia-amputacion-mi",
+      "descripcion": "Pacientes diabeticos con amputación de miembros inferiores/pacientes con diabetes",
+      "metric": {
+        "label": "Porcentaje",
+        "value": 4.2,
+        "target": 5.87
+      }
+    },
+    {
+      "nombre": "Tamizaje para Dislipidemia",
+      "slug": "tamizaje-dilipidemia",
+      "descripcion": "Expresa la proporción de pacientes con diagnóstico de DM a quienes se han realizado en último año estudios de tamizaje en Dislipidemia",
+      "metric": {
+        "label": "Porcentaje",
+        "value": 4.2,
+        "target": 5.87
+      }
+    },
+    {
+      "nombre": "Captación de DM",
+      "slug": "captacion-dm",
+      "descripcion": "Expresa la proporción de casos con DM respecto a los casos esperados con diagnóstico de DM en personas mayores de 18 años.",
+      "metric": {
+        "label": "Porcentaje",
+        "value": 4.2,
+        "target": 5.87
+      }
+    },
+    {
+      "nombre": "Cumplimiento Micrometas DM",
+      "slug": "cumplimiento-micrometas-dm",
+      "descripcion": "Expresa la proporción de cumplimiento de micrometa mes de diagnóstico de DM asignado",
+      "metric": {
+        "label": "Porcentaje",
+        "value": 4.2,
+        "target": 5.87
+      }
+    }
+  ],
+  "ERC": [
+    {
+      "nombre": "Incidencia ERC",
+      "slug": "incidencia-erc",
+      "descripcion": "Pacientes afiliados con diagnóstico nuevo de enfermedad renal crónica en el último año",
+      "metric": {
+        "label": "Tasa",
+        "value": 4.2,
+        "target": 5.87
+      }
+    },
+    {
+      "nombre": "Prevalencia ERC",
+      "slug": "prevalencia-erc",
+      "descripcion": "Expresa la proporción de casos con ERC diagnosticada respecto a la población afiliada mayor de 18 años.",
+      "metric": {
+        "label": "Tasa",
+        "value": 4.2,
+        "target": 5.87
+      }
+    },
+    {
+      "nombre": "Cobertura Programa ERC",
+      "slug": "cobertura-programa-erc",
+      "descripcion": "Pacientes con enfermedad renal crónica con valoración por profesionales del programa en los últimos 6 meses (UAP-UR) /pacientes con enfermedad renal crónica",
+      "metric": {
+        "label": "Tasa",
+        "value": 4.2,
+        "target": 5.87
+      }
+    },
+    {
+      "nombre": "Tasa Ingreso a Dialisis",
+      "slug": "tasa-ingreso-dialisis",
+      "descripcion": "Pacientes con enfermedad renal crónica en hemodialisis, dialisis peritoneal en el último mes",
+      "metric": {
+        "label": "Tasa",
+        "value": 4.2,
+        "target": 5.87
+      }
+    },
+    {
+      "nombre": "Captación de ERC",
+      "slug": "captacion-erc",
+      "descripcion": "Expresa la proporción de casos con ERC respecto a los casos esperados con diagnóstico de ERC en personas mayores de 18 años.",
+      "metric": {
+        "label": "Tasa",
+        "value": 4.2,
+        "target": 5.87
+      }
+    },
+    {
+      "nombre": "Hospitalización ERC",
+      "slug": "hospitalizacion-erc",
+      "descripcion": "Paciente con enfermedad renal crónica con hospitalización por enfermedad renal crónica",
+      "metric": {
+        "label": "Tasa",
+        "value": 4.2,
+        "target": 5.87
+      }
+    },
+    {
+      "nombre": "Estadificación ERC TFG",
+      "slug": "estadificacion-erc-tfg",
+      "descripcion": "Clasificación de la enfermedadd renal crónica según estadio por filtración glomerular (1, 2, 3, 4 y 5)",
+      "metric": {
+        "label": "Tasa",
+        "value": 4.2,
+        "target": 5.87
+      }
+    },
+    {
+      "nombre": "Progresión enfermedad renal crónica",
+      "slug": "progresion-erc",
+      "descripcion": "Pacientes con enfermedad renal crónica grado 1, 2, 3 y 4 con disminución de la tasa de filtración glomerular al año mayor de 5ml/min",
+      "metric": {
+        "label": "Tasa",
+        "value": 4.2,
+        "target": 5.87
+      }
+    }
+  ],
+  "Otros": [
+    {
+      "nombre": "Control HTA Diagnosticados",
+      "slug": "control-hta-diagnosticados",
+      "descripcion": "Expresa la proporción de pacientes con diagnóstico de hipertensión arterial, quienes se encuentran con dos cifras de tensión arterial controladas en los últimos siete meses.",
+      "metric": {
+        "label": "Tasa",
+        "value": 4.2,
+        "target": 5.87
+      }
+    },
+    {
+      "nombre": "Control DM Diagnosticados",
+      "slug": "control-dm-diagnosticados",
+      "descripcion": "Expresa la proporción de pacientes con diagnóstico de DM que se encuentran en programa, quienes se encuentran con HbA1C en metas últimos seis meses.",
+      "metric": {
+        "label": "Tasa",
+        "value": 4.2,
+        "target": 5.87
+      }
+    },
+    {
+      "nombre": "Control Obesidad",
+      "slug": "control-obesidad",
+      "descripcion": "% De pacientes con diagnostico de obesidad y sobrepeso.",
+      "metric": {
+        "label": "Porcentaje",
+        "value": 20.0,
+        "target": 5.87
+      }
+    },
+    {
+      "nombre": "Control Hipoglicemia",
+      "slug": "control-hipoglicemia",
+      "descripcion": "% de pacientes con registros de eventos de hipoglicemia en el ultimo control.",
+      "metric": {
+        "label": "Porcentaje",
+        "value": 20.0,
+        "target": 5.87
+      }
+    }
+  ]
+}
+
+
+

@@ -1,0 +1,3 @@
+from .control_hipoglicemia import ControlHipoglicemia
+from .control_hta_diagnosticados import ControlHTADiagnosticados
+from .control_obesidad import ControlObesidad

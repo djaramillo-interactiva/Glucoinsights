@@ -1,0 +1,63 @@
+
+.menu-item > div{
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--primary-soft-text);
+}
+
+.tabs .tab{
+    font-size: .9rem;
+    font-weight: bold;
+    color: #B6B6B6;
+    border-bottom:2px solid transparent;
+    border-top: 2px solid transparent;
+}
+
+.tabs .tab.active{
+    color: var(--primary);
+    border-bottom:2px solid var(--primary);
+}
+
+.reg-box{
+    background: #F8F8F8;
+}
+
+.reg-box:active{
+    background: #f1f1f1;
+}
+
+header h2{
+    color: var(--text-color);
+    font-weight: 400;
+    font-size:17px;
+}
+
+header{
+    position:fixed;
+    top:0;
+    left:65px;
+    right:0;
+    background:white;
+    z-index:10;
+}
+
+.aside-menu{
+    position: sticky;
+    top:0;
+}
+
+.naui-input[readonly]{
+    background: var(--back-gray);
+    border-color: var(--border-color);
+}
+
+hr{
+    border: none;
+    height: 1px;
+    background: var(--border-color);
+}
+
+/* Date input polyfill */
+date-input-polyfill {
+    z-index: 50;
+}

@@ -1,0 +1,42 @@
+venv/
+.idea/
+local.env
+node_modules/
+*.sql
+.DS_Store
+
+svelte/static/svelte/bundle.*
+/svelte/static/svelte/
+/.env
+media/
+__pycache__/
+
+# Django #
+*.log
+*.pot
+*.pyc
+__pycache__
+*__pycache__
+
+# pyenv 
+.python-version 
+
+# Environments 
+.env 
+.venv 
+env/ 
+venv/ 
+ENV/ 
+env.bak/ 
+venv.bak/ 
+
+# Visual Studio Code # 
+.vscode/* 
+!.vscode/settings.json 
+!.vscode/tasks.json 
+!.vscode/launch.json 
+!.vscode/extensions.json 
+.history
+
+# mypy 
+.mypy_cache/

@@ -1,0 +1,36 @@
+{% extends "gi/partials/base.html" %}
+{% import 'gi/app/app.html' as app %}
+
+{% block main %}
+    {% with active='segmentacion-grupos' %}
+        {% include 'gi/views/segmentacion/nav.html' %}
+    {% endwith %}
+
+    <div class="py-15">
+        <div id="segmentacion-grupos-app"></div>
+    </div>
+
+{% endblock %}
+
+
+{% block bottom %}
+    <script>
+        let grupos;
+        window.addEventListener('DOMContentLoaded', (event) => {
+            grupos = new app.nauiIndex({
+                target: document.getElementById('segmentacion-grupos-app'),
+                props: {
+                    data: {{ data|safe }},
+                    nameLabel: 'Nombre',
+                    countLabel: '# Pacientes'
+                }
+            });
+
+            // Este evento funciona cuando no se le pasa una ruta a los detalles
+            grupos.$on('click', (event) => {
+                console.log(event.detail);
+            });
+        });
+    </script>
+{% endblock %}
+

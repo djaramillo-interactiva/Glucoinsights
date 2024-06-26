@@ -1,0 +1,149 @@
+from django.contrib.auth.models import User
+from django.core.management import BaseCommand
+from django.db.transaction import atomic
+
+from gi.models import Usuario, GrupoGestion
+
+
+class Command(BaseCommand):
+    help = "Agrega los indicadores iniciales a la base de datos"
+
+    @atomic
+    def handle(self, *args, **options):
+        grupos_gestion = [
+            "ALIANSALUD ENTIDAD PROMOTRA DE SALUD S.A. ",
+            "ASOCIACIÓN -MUTUAL SER- EMPRESA SOLIDARIA DE SALUD ESS",
+            "ASOCIACIÓN DE CABILDOS DEL RESGUARDO INDÍGENA ZENU DE SAN ANDRÉS DE SOTAVENTO CÓRDOBA–SUCRE -MANEXKA",
+            "ASOCIACIÓN DE CABILDOS INDÍGENAS DEL CESAR -DUSAKAWI ",
+            "ASOCIACIÓN INDÍGENA DEL CAUCA -A.I.C.",
+            "ASOCIACIÓN MUTUAL BARRIOS UNIDOS DE QUIBDÓ E.S.S. AMBUQ",
+            "ASOCIACIÓN MUTUAL EMPRESA SOLIDARIA DE SALUD DE NARIÑO E.S.S. -EMSSANAR ESS",
+            "ASOCIACIÓN MUTUAL LA ESPERANZA -ASMET SALUD",
+            "CAFESALUD EPS",
+            "CAJA COLOMBIANA DE SUBSIDIO FAMILIAR COLSUBSIDIO EPS ",
+            "CAJA COLOMBIANA DE SUBSIDIO FAMILIAR COLSUBSIDIO EPSS ",
+            "CAJA DE COMPENSACIÓN FAMILIAR CAFAM EPS",
+            "CAJA DE COMPENSACIÓN FAMILIAR DEL NORTE DE SANTANDER- FAMISALUD COMFANORTE A.R.S.",
+            "CAJA DE COMPENSACIÓN FAMILIAR DEL ORIENTE COLOMBIANO-COMFAORIENTE",
+            "CAJA DE PREVISIÓN SOCIAL DE COMUNICACIONES “CAPRECOM”",
+            "CAJA DE PREVISIÓN SOCIAL DE LA UNIVERSIDAD DE CARTAGENA",
+            "CAJA DE PREVISIÓN SOCIAL DE LA UNIVERSIDAD INDUSTRIAL DE SANTANDER",
+            "CAJACOPI ATLÁNTICO–CCF ",
+            "CAPITAL SALUD EPSS SAS.",
+            "CAPRESOCA EPS",
+            'CCF CARTAGENA "COMFAMILIAR CARTAGENA"',
+            "COLMEDICA EMPRESA MEDICINA PREPAGADA ",
+            "COLPATRIA EMPRESA MEDICINA PREPAGADA ",
+            "COLSANITAS EMPRESA MEDICINA PREPAGADA",
+            "COMFABOY EPS–CCF DE BOYACÁ",
+            "COMFACHOCO–CCF DEL CHOCÓ",
+            "COMFACOR EPS–CCF DE CÓRDOBA",
+            "COMFACUNDI–CCF DE CUNDINAMARCA ",
+            "COMFAMILIAR DE LA GUAJIRA EPS -CCF",
+            "COMFAMILIAR HUILA EPS–CCF",
+            "COMFAMILIAR NARIÑO EPS–CCF",
+            "COMFASUCRE EPS–CCF DE SUCRE",
+            "COMFENALCO VALLE E.P.S.",
+            "COMFENALCO VALLE EMPRESA MEDICINA PREPAGADA ",
+            "COMPENSAR ENTIDAD PROMOTORA DE SALUD ",
+            "COOMEVA E.P.S. S.A.",
+            "COOMEVA EMPRESA MEDICINA PREPAGADA",
+            "COOPERATIVA DE SALUD COMUNITARIA -COMPARTA",
+            "COOSALUD E.S.S.–COOPERATIVA DE SALUD Y DLLO. INTEGRAL DE LA ZONA\nSUR ORIENTAL DE CARTAGENA LTDA",
+            "CRUZ BLANCA ENTIDAD PROMOTORA DE SALUD S.A",
+            "CRUZ BLANCA ENTIDAD PROMOTORA DE SALUD S.A. ",
+            "DEPARTAMENTO DE CALDAS",
+            "DIRECCIÓN DE SALUD DISTRITAL DE CARTAGENA–DADIS",
+            "DIRECCIÓN DEPARTAMENTAL DE SALUD DE AMAZONAS",
+            "DIRECCIÓN DEPARTAMENTAL DE SALUD DE ARAUCA",
+            "DIRECCIÓN DEPARTAMENTAL DE SALUD DE CAQUETÁ",
+            "DIRECCIÓN DEPARTAMENTAL DE SALUD DE CASANARE",
+            "DIRECCIÓN DEPARTAMENTAL DE SALUD DE CAUCA",
+            "DIRECCIÓN DEPARTAMENTAL DE SALUD DE CESAR",
+            "DIRECCIÓN DEPARTAMENTAL DE SALUD DE CHOCÓ",
+            "DIRECCIÓN DEPARTAMENTAL DE SALUD DE CUNDINAMARCA",
+            "DIRECCIÓN DEPARTAMENTAL DE SALUD DE CÓRDOBA",
+            "DIRECCIÓN DEPARTAMENTAL DE SALUD DE GUAINÍA",
+            "DIRECCIÓN DEPARTAMENTAL DE SALUD DE GUAJIRA",
+            "DIRECCIÓN DEPARTAMENTAL DE SALUD DE GUAVIARE",
+            "DIRECCIÓN DEPARTAMENTAL DE SALUD DE HUILA",
+            "DIRECCIÓN DEPARTAMENTAL DE SALUD DE MAGDALENA",
+            "DIRECCIÓN DEPARTAMENTAL DE SALUD DE META",
+            "DIRECCIÓN DEPARTAMENTAL DE SALUD DE NARIÑO",
+            "DIRECCIÓN DEPARTAMENTAL DE SALUD DE NORTE DE SANTANDER",
+            "DIRECCIÓN DEPARTAMENTAL DE SALUD DE PUTUMAYO",
+            "DIRECCIÓN DEPARTAMENTAL DE SALUD DE QUINDÍO",
+            "DIRECCIÓN DEPARTAMENTAL DE SALUD DE RISARALDA",
+            "DIRECCIÓN DEPARTAMENTAL DE SALUD DE SAN ANDRÉS",
+            "DIRECCIÓN DEPARTAMENTAL DE SALUD DE SUCRE",
+            "DIRECCIÓN DEPARTAMENTAL DE SALUD DE TOLIMA",
+            "DIRECCIÓN DEPARTAMENTAL DE SALUD DE VALLE",
+            "DIRECCIÓN DEPARTAMENTAL DE SALUD DE VAUPÉS",
+            "DIRECCIÓN DEPARTAMENTAL DE SALUD DE VICHADA",
+            "E.P.S. FAMISANAR LTDA.",
+            "ECOPETROL",
+            "EMPRESA MUTUAL PARA EL DESARROLLO INTEGRAL DE LA SALUD E.S.S. -EMDISALUD ESS",
+            "EMPRESAS PÚBLICAS DE MEDELLÍN DEPARTAMENTO MÉDICO ANTIOQUIA MEDELLIN",
+            "ENTIDAD ADMINISTRADORA DE RÉGIMEN SUBSIDIADO CONVIDA",
+            "ENTIDAD COOPERATIVA SOLIDARIA DE SALUD -ECOOPSOS ",
+            "ENTIDAD PROMOTORA DE SALUD -MALLAMAS EPSI",
+            "ENTIDAD PROMOTORA DE SALUD -PIJAOS SALUD EPSI",
+            "ENTIDAD PROMOTORA DE SALUD INDÍGENA -ANAS WAYUU",
+            "ENTIDAD PROMOTORA DE SALUD ORGANISMO COOPERATIVO SALUDCOOP",
+            "ENTIDAD PROMOTORA DE SALUD SANITAS S.A. ",
+            "ENTIDAD PROMOTORA DE SALUD SERVICIO OCCIDENTAL DE SALUD S.A. -S.O.S",
+            "FONDO DE PASIVO SOCIAL DE FERROCARRILES NACIONALES DE COLOMBIA",
+            "FONDO DE PRESTACIONES SOCIALES DEL MAGISTERIO",
+            "FONDO DE SEGURIDAD SOCIAL EN SALUD UNIVERSIDAD DE NARIÑO",
+            "FUERZAS MILITARES",
+            "FUNDACION SALUD MIA",
+            "GOLDEN GROUP S.A. ENTIDAD PROMOTORA DE SALUD ",
+            "MEDIMAS",
+            "MEDISANITAS EMPRESA MEDICINA PREPAGAD",
+            "NUEVA EPS S.A.",
+            "NUEVA EPS S.A. MOVILIDAD",
+            "POLICÍA NACIONAL",
+            "SALUD TOTAL S.A. ENTIDAD PROMOTORA DE SALUD ",
+            "SALUDVIDA S.A. ENTIDAD PROMOTORA DE SALUD",
+            "SALUDVIDA S.A. ENTIDAD PROMOTORA DE SALUD ",
+            "SAVIA SALUD",
+            "SECRETARÍA DE SALUD DE BOGOTÁ",
+            "SECRETARÍA DE SALUD DE BOYACÁ",
+            "SECRETARÍA DE SALUD DE SANTA MARTA",
+            "SECRETARÍA DE SALUD DE SANTANDER",
+            "SECRETARÍA DEPARTAMENTAL DE SALUD DE BOLÍVAR",
+            "SECRETARÍA DEPARTAMENTAL DE SALUD DEL ATLÁNTICO",
+            "SECRETARÍA DISTRITAL DE SALUD DE BARRANQUILLA",
+            "SECRETARÍA SECCIONAL DE ANTIOQUIA",
+            "SURA EMPRESA MEDICINA PREPAGADA",
+            "SURA EPS",
+            "UNIDAD ADMINISTRATIVA ESPECIAL DE SALUD UNIVERSIDAD DE CORDOBA",
+            "UNIDAD DE SALUD DE LA UNIVERSIDAD DE ANTIOQUIA",
+            "UNIDAD DE SALUD DE LA UNIVERSIDAD DEL ATLÁNTICO",
+            "UNIVERSIDAD DEL CAUCA",
+            "UNIVERSIDAD DEL VALLE",
+            "UNIVERSIDAD NACIONAL",
+            "UPTC TUNJA",
+        ]
+
+        for index, item in enumerate(grupos_gestion):
+            try:
+                _grupo_gestion = GrupoGestion.objects.get(nombre=item)
+            except GrupoGestion.DoesNotExist:
+                _grupo_gestion = GrupoGestion(nombre=item)
+                _grupo_gestion.save()
+            try:
+                _user = User.objects.get(username=item)
+                usr = Usuario.objects.filter(fk_user_django=_user).first()
+                if usr:
+                    usr.delete()
+                _user.delete()
+            except User.DoesNotExist:
+                pass
+            user, c = User.objects.get_or_create(
+                username=f"Admin {item[:5]}. {_grupo_gestion.id}"
+            )
+            user.email = f"email_pruebas+{index}@test.co"
+            user.save()
+            content_user, c = Usuario.objects.get_or_create(fk_user_django=user)
+            content_user.grupos_gestion.add(_grupo_gestion)

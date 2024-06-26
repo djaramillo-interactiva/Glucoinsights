@@ -1,0 +1,33 @@
+{% extends "gi/partials/base.html" %}
+{% import 'gi/app/app.html' as app %}
+
+{% block main %}
+    {% with active='indicadores' %}
+        {% include 'gi/views/parametros/nav.html' %}
+    {% endwith %}
+    <div class="py-15">
+        <div id="indicadores-app"></div>
+    </div>
+{% endblock %}
+
+{% block bottom %}
+    <script>
+        let indicadores;
+        window.addEventListener('DOMContentLoaded', (event) => {
+            indicadores = new app.indicadores({
+                target: document.querySelector('#indicadores-app'),
+                props: {
+                    data: {{ data|safe }},
+                    submit: () => {
+                        const data = indicadores.getPostData();
+                        submitData(data, 'put')
+                            .then(d => {
+                                alert('Se han guardado los datos correctamente');
+                            });
+                    }
+                }
+            })
+        });
+    </script>
+{% endblock %}
+

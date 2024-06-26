@@ -1,0 +1,34 @@
+{% extends "gi/partials/base.html" %}
+{% import 'gi/app/app.html' as app %}
+
+{% block main %}
+    {% with active='grupos-etareos' %}
+        {% include 'gi/views/parametros/nav.html' %}
+    {% endwith %}
+    <div class="py-15">
+        <div id="grupos-etareos-app"></div>
+    </div>
+{% endblock %}
+
+{% block bottom %}
+    <script>
+        let gruposEtareosApp;
+        window.addEventListener('DOMContentLoaded', (event) => {
+            gruposEtareosApp = new app.gruposEtareos({
+                target: document.getElementById('grupos-etareos-app'),
+                props: {
+                    data: {{ data|safe }},
+                }
+            });
+
+            gruposEtareosApp.$on('save', () => {
+                submitData(gruposEtareosApp.data, 'post')
+                    .then(res => {
+                        gruposEtareosApp.data = res.data;
+                        alert('Se han guardado los cambios exitósamente.');
+                    });
+            });
+        });
+    </script>
+{% endblock %}
+

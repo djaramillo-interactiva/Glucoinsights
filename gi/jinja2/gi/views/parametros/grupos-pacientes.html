@@ -1,0 +1,45 @@
+{% extends "gi/partials/base.html" %}
+{% import 'gi/app/app.html' as app %}
+
+{% block main %}
+    {% with active='grupos-pacientes' %}
+        {% include 'gi/views/parametros/nav.html' %}
+    {% endwith %}
+    <!-- {{ csrf_input }} -->
+    <div class="py-15">
+        <div id="grupos-pacientes-app"></div>
+    </div>
+
+{% endblock %}
+
+{% block bottom %}
+    <script>
+        let gruposPacientes;
+        window.addEventListener('DOMContentLoaded', (event) => {
+            gruposPacientes = new app.gruposPacientes({
+                target: document.querySelector('#grupos-pacientes-app'),
+                props: {
+                    data: {{ data|safe }},
+                    groups: {{ groups|safe }}
+                }
+            });
+
+            gruposPacientes.$on('create', ev => {
+                submitData(ev.detail, 'post').then(updateData)
+            });
+            gruposPacientes.$on('update', ev => {
+                submitData(ev.detail, 'put').then(updateData);
+            });
+            gruposPacientes.$on('delete', ev => {
+                submitData(ev.detail, 'delete').then(updateData);
+            });
+
+            function updateData(res) {
+                if (res.data) {
+                    gruposPacientes.data = res.data;
+                }
+            }
+        });
+    </script>
+{% endblock %}
+

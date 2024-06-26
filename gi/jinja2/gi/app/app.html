@@ -1,0 +1,14 @@
+{% macro nav(data, active) %}
+    <div class="tabs w-100 border-bottom box-l sx-1">
+        {% for tab in data %}
+            <a href="{{ tab.route }}" class="tab block py-iii px-1 text-c {% if active==tab.slug %}active{% endif %}">
+                {{ tab.label }}
+            </a>
+        {% endfor %}
+    </div>
+{% endmacro %}
+
+
+{% macro ficha() %}
+<h1>Ficha encabezado</h1>
+{% endmacro %}

@@ -1,0 +1,226 @@
+/* Buttons */
+.btn-icon{
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border:1px solid #eee;
+  background-color: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.btn-icon:hover{
+  background-color: #f7f8f9;
+}
+
+.btn-icon:active{
+  background-color: #f2f2f2;
+}
+
+
+.btn-icon.small{
+  width: 30px;
+  height: 30px;
+  font-size: .8rem;
+}
+
+.btn-icon.small .material-icons, .btn-icon.small .material-icons-outlined{
+  font-size: 20px;
+}
+
+button.btn-icon{
+  -webkit-appearance: none;
+  outline: none;
+}
+
+
+.btn {
+  min-height: 40px;
+  display: flex;
+  cursor: pointer;
+  font-size: .9rem;
+  line-height: 14px;
+  color: var(--text-color);
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  vertical-align: middle;
+  align-items: center;
+  background: white;
+  font-weight: 700;
+  transition: .05s;
+  border:none;
+  /* border: 1px solid var(--border-color, #CDCECF); */
+  border-radius: var(--border-radius, 4px); }
+
+
+button.btn{
+  -webkit-appearance: none;
+  outline: none;
+  background: none;
+}
+.btn.small {
+  min-height: 35px;
+  padding: .25rem 1rem;
+  font-size: .8rem;
+}
+
+.btn.large {
+  min-height: 50px;
+  padding: .35rem 1.5rem;
+  font-size: 1.1rem; }
+
+.btn:active {
+  background: #f0f1f2;
+}
+
+.btn > * + * {
+  margin-left: .5rem; }
+
+/* Variations Basic */
+.btn:hover {
+  background: #f4f5f6;
+}
+
+.btn:active {
+  background: #f0f1f2;
+}
+
+.btn.primary i, .btn.primary span{
+  color: var(--primary);
+}
+.btn.secondary i, .btn.secondary span{
+  color: var(--secondary);
+}
+.btn.accent i, .btn.accent span{
+  color: var(--accent);
+}
+
+
+
+/* Variations Stroked */
+.btn.stroked{
+  border: 1px solid #ddd;
+  background: #fafafa;
+}
+.btn.stroked:hover{
+  background: #f4f5f6;
+}
+.btn.stroked:active{
+  background: #f0f1f2;
+}
+
+.btn.stroked.primary i, .btn.stroked.primary span{
+  color: var(--primary);
+}
+.btn.stroked.secondary i, .btn.stroked.secondary span{
+  color: var(--secondary);
+}
+.btn.stroked.accent i, .btn.stroked.accent span{
+  color: var(--accent);
+}
+
+/* Variations Outline */
+.btn.outline:hover{
+  border:1px solid #f4f5f6;
+  background: #f4f5f6;
+}
+.btn.outline:active{
+  border:1px solid #f0f1f2;
+  background: #f0f1f2;
+}
+
+.btn.outline.primary{
+  border: 1px solid var(--primary);
+}
+.btn.outline.primary i, .btn.outline.primary span{
+  color: var(--primary);
+}
+.btn.outline.primary:active{
+  border:1px solid #f4f5f6;
+}
+
+.btn.outline.secondary{
+  border: 1px solid var(--secondary);
+}
+.btn.outline.secondary i, .btn.outline.secondary span{
+  color: var(--secondary);
+}
+.btn.outline.secondary:active{
+  border:1px solid #f4f5f6;
+}
+
+.btn.outline.accent{
+  border: 1px solid var(--accent);
+}
+.btn.outline.accent i, .btn.outline.accent span{
+  color: var(--accent);
+}
+.btn.outline.accent:hover, .btn.outline.primary:hover, .btn.outline.secondary:hover{
+  border:1px solid #f4f5f6;
+  background: #f4f5f6;
+}
+.btn.outline.accent:active, .btn.outline.secondary:active, .btn.outline.primary:active{
+  border:1px solid #f0f1f2;
+  background: #f0f1f2;
+}
+
+/* Variation Solid */
+.btn.solid{
+  background: #f4f5f6;
+}
+.btn.solid:hover{
+  background: #f0f1f2;
+}
+.btn.solid:active{
+  background: #e7e8e9;
+}
+
+.btn.solid.primary{
+  background: var(--primary);
+}
+.btn.solid.primary i, .btn.solid.primary span{
+  color: var(--primary-inverted, #fafafa);
+}
+
+.btn.solid.secondary{
+  background: var(--secondary);
+}
+.btn.solid.secondary i, .btn.solid.secondary span{
+  color: var(--secondary-inverted, #fafafa);
+}
+
+.btn.solid.accent{
+  background: var(--accent);
+}
+.btn.solid.accent i, .btn.solid.accent span{
+  color: var(--accent-inverted, #fafafa);
+}
+
+/* Colors */
+
+
+/* Colors */
+.btn-outline-accent{
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.btn-outline-accent:active{
+  border-color: var(--accent);
+}
+
+.btn-accent-solid{
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+.btn-accent-solid i{
+  color: white;
+}
+
+.btn-accent-solid:active{
+  background: var(--accent);
+  border-color: var(--accent);
+}

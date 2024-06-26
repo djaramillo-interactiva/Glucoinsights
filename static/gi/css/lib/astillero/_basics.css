@@ -1,0 +1,48 @@
+* {
+  font-family: 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #555;
+}
+
+.border-bottom{
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Colors */
+.accent{
+  color: var(--accent);
+}
+.primary{
+  color: var(--primary);
+}
+.error {
+  color: var(--error);
+}
+.secondary{
+  color: var(--secondary);
+}
+
+.white{
+  color: white;
+}
+.back-white{
+  background-color: white;
+}
+.back-primary{
+  background-color: var(--primary);
+  color: white;
+}
+.back-secondary{
+  background-color: var(--secondary);
+  color: white;
+}
+
+.back-gray{
+  background-color: var(--back-gray);
+}
+
+.blur-shadow{
+  box-shadow: 0 0 6px rgba(0,0,0,0.15);
+  border: 1px solid #f5f5f5;
+}

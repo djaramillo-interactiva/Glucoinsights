@@ -1,0 +1,23 @@
+{% if id_paciente %}
+{% set nav=[
+    {
+        "label":"DATOS PACIENTE",
+        "route": url('gi:datos-paciente', kwargs={'id_paciente': id_paciente}),
+        "slug":"datos-paciente"
+    },
+    {
+        "label":"PERFILAMIENTO",
+        "route": url('gi:perfilamiento-paciente', kwargs={'id_paciente': id_paciente}),
+        "slug":"perfilamiento"
+    },
+] %}
+{% else %}
+{% set nav=[
+    {
+        "label":"DATOS PACIENTE",
+        "route": url('gi:crear-datos-paciente'),
+        "slug":"datos-paciente"
+    }
+] %}
+{% endif %}
+{{ app.nav(data=nav, active=active) }}

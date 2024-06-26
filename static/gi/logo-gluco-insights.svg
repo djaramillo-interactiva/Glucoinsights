@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="88" height="72.008" viewBox="0 0 88 72.008">
+  <g id="Group_9784" data-name="Group 9784" transform="translate(-596.5 -229.992)">
+    <g id="Group_4647" data-name="Group 4647" transform="translate(609.542 229.992)">
+      <g id="Group_4567" data-name="Group 4567">
+        <path id="Path_4373" data-name="Path 4373" d="M375.459,332.628V280.6H333.535v54.1h41.924v-2.446l1.418,1.618v2.246h-44.76V279.18h44.76v54.691Z" transform="translate(-321.128 -279.18)" fill="#022269"/>
+        <path id="Path_4374" data-name="Path 4374" d="M293.682,352.889H289.5V301.78h4.186V303.2h-2.768v48.273h2.768Z" transform="translate(-284.001 -298.867)" fill="#022269"/>
+        <path id="Path_4375" data-name="Path 4375" d="M251.061,369.831h-4.186V324.607h4.186v1.418h-2.768v42.387h2.768Z" transform="translate(-246.875 -318.751)" fill="#022269"/>
+      </g>
+      <g id="Group_4568" data-name="Group 4568" transform="translate(16.851 41.604)">
+        <rect id="Rectangle_3071" data-name="Rectangle 3071" width="1.418" height="5.392" transform="translate(0 4.045)" fill="#02a3da"/>
+        <rect id="Rectangle_3072" data-name="Rectangle 3072" width="1.418" height="7.394" transform="translate(3.192 2.043)" fill="#02a3da"/>
+        <rect id="Rectangle_3073" data-name="Rectangle 3073" width="1.418" height="4.541" transform="translate(6.384 4.897)" fill="#02a3da"/>
+        <rect id="Rectangle_3074" data-name="Rectangle 3074" width="1.418" height="9.437" transform="translate(9.576)" fill="#02a3da"/>
+        <rect id="Rectangle_3075" data-name="Rectangle 3075" width="1.418" height="6.054" transform="translate(12.768 3.383)" fill="#02a3da"/>
+        <rect id="Rectangle_3076" data-name="Rectangle 3076" width="1.418" height="7.394" transform="translate(15.96 2.043)" fill="#02a3da"/>
+        <rect id="Rectangle_3077" data-name="Rectangle 3077" width="1.418" height="4.274" transform="translate(19.152 5.164)" fill="#02a3da"/>
+        <rect id="Rectangle_3078" data-name="Rectangle 3078" width="1.418" height="5.639" transform="translate(22.344 3.799)" fill="#02a3da"/>
+        <rect id="Rectangle_3156" data-name="Rectangle 3156" width="1.418" height="7.394" transform="translate(25.482 2.044)" fill="#02a3da"/>
+        <rect id="Rectangle_3157" data-name="Rectangle 3157" width="1.418" height="4.274" transform="translate(28.673 5.164)" fill="#02a3da"/>
+        <rect id="Rectangle_3158" data-name="Rectangle 3158" width="1.418" height="5.639" transform="translate(31.865 3.799)" fill="#02a3da"/>
+      </g>
+      <g id="Group_4646" data-name="Group 4646" transform="translate(22.269 5.983)">
+        <g id="Path_4385" data-name="Path 4385" transform="translate(0 14)" fill="#fff">
+          <path d="M 11.09569931030273 15.58814239501953 C 5.528909206390381 15.58814239501953 0.9999992847442627 11.05923175811768 0.9999992847442627 5.49244213104248 C 0.9999992847442627 3.886312246322632 1.93122935295105 0.5923821330070496 6.367629528045654 -5.978868007659912 C 8.216324806213379 -8.717181205749512 10.08364200592041 -11.13393211364746 11.09569931030273 -12.40781497955322 C 12.10775661468506 -11.13393211364746 13.97507381439209 -8.717181205749512 15.82376956939697 -5.978868007659912 C 20.26016998291016 0.5923821330070496 21.19139862060547 3.886312246322632 21.19139862060547 5.49244213104248 C 21.19139862060547 11.05923175811768 16.66248893737793 15.58814239501953 11.09569931030273 15.58814239501953 Z" stroke="none"/>
+          <path d="M 11.09569931030273 -10.78754234313965 C 10.05500411987305 -9.444314956665039 8.614901542663574 -7.521245002746582 7.187569618225098 -5.406198024749756 C 2.6739501953125 1.282172203063965 2 4.293012142181396 2 5.49244213104248 C 2 10.50783157348633 6.08030891418457 14.58814239501953 11.09569931030273 14.58814239501953 C 16.1110897064209 14.58814239501953 20.19139862060547 10.50783157348633 20.19139862060547 5.49244213104248 C 20.19139862060547 4.293012142181396 19.51744842529297 1.282172203063965 15.00382995605469 -5.406198024749756 C 13.57649707794189 -7.521245002746582 12.13639450073242 -9.444314956665039 11.09569931030273 -10.78754234313965 M 11.09569931030273 -13.99999809265137 C 11.09569931030273 -13.99999809265137 22.19139862060547 -0.63553786277771 22.19139862060547 5.49244213104248 C 22.19139862060547 11.62043190002441 17.22367858886719 16.58814239501953 11.09569931030273 16.58814239501953 C 4.967708587646484 16.58814239501953 0 11.62043190002441 0 5.49244213104248 C 0 -0.63553786277771 11.09569931030273 -13.99999809265137 11.09569931030273 -13.99999809265137 Z" stroke="none" fill="#001965"/>
+        </g>
+        <path id="Icon_metro-plus" data-name="Icon metro-plus" d="M8.557,4.245H6.433V2.121a.193.193,0,0,0-.193-.193H5.081a.193.193,0,0,0-.193.193V4.245H2.764a.193.193,0,0,0-.193.193V5.6a.193.193,0,0,0,.193.193H4.888V7.914a.193.193,0,0,0,.193.193H6.24a.193.193,0,0,0,.193-.193V5.79H8.557A.193.193,0,0,0,8.75,5.6V4.438A.193.193,0,0,0,8.557,4.245Z" transform="translate(5.324 10.374)" fill="#009cd0"/>
+        <path id="Icon_metro-plus-2" data-name="Icon metro-plus" d="M8.557,6.659H2.764a.193.193,0,0,0-.193.193V8.011a.193.193,0,0,0,.193.193H8.557a.193.193,0,0,0,.193-.193V6.852A.193.193,0,0,0,8.557,6.659Z" transform="translate(5.324 15.798)" fill="#009cd0"/>
+      </g>
+    </g>
+    <g id="Group_4648" data-name="Group 4648" transform="translate(596.5 291.115)">
+      <text id="USUARIO" transform="translate(0 8.885)" fill="#02a3da" font-size="9" font-family="Verdana-Bold, Verdana" font-weight="700"><tspan x="0" y="0">GLUCO</tspan></text>
+      <text id="USUARIO-2" data-name="USUARIO" transform="translate(36 8.885)" fill="#022269" font-size="9" font-family="Verdana-Bold, Verdana" font-weight="700"><tspan x="0" y="0">INSIGHTS</tspan></text>
+    </g>
+  </g>
+</svg>

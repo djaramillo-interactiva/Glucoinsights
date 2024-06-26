@@ -1,0 +1,6 @@
+from .incidencia_hta import IncidenciaHTA
+from .prevalencia_hta import PrevalenciaHTA
+from ._01_control_presion_arterial import ControlPresionArterialHTA
+from ._02_toma_creatinina import TomaCreatininaHTA
+from ._03_control_ldl import ControlLdlHTA
+from ._04_cobertura_programa import CoberturaProgramaHTA

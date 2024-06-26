@@ -1,0 +1,157 @@
+{% extends "gi/partials/base.html" %}
+{% import 'gi/app/app.html' as app %}
+
+{% block main %}
+    <div class="py-15">
+        <div id="grupo-pacientes-app"></div>
+    </div>
+{% endblock %}
+
+{% block bottom %}
+    <script>
+        let pacientes;
+        window.addEventListener('DOMContentLoaded', (event) => {
+            pacientes = new app.pacientes({
+                target: document.querySelector('#grupo-pacientes-app'),
+                props: {
+                    data: {{ data|tojson }},
+                    count: {{ total }},
+                    pages: {{ pages }},
+                    paginate: true,
+                    routeApiSeguimientoPacientes: '{{ url('gi:api-seguimiento-pacientes') }}',
+                    filters: [
+                        {
+                            slug: 'diagnostico',
+                            label: 'Diagnóstico',
+                            options: {{ diagnoses|tojson }}
+                        },
+                        {
+                            slug: 'ciudad',
+                            label: 'Ciudad',
+                            options: {{ cities|tojson }}
+                        },
+                        {
+                            slug: 'riesgo_rcv',
+                            label: 'Riesgo RCV',
+                            options: {{ riesgos_rcv|tojson }}
+                        },
+                        {
+                            slug: 'riesgo_tfg',
+                            label: 'Riesgo TFG',
+                            options: {{ riesgos_tfg|tojson }}
+                        },
+                        {
+                            slug: 'imc',
+                            label: 'IMC',
+                            options: [
+                                {label: 'Normal', value: 'normal'},
+                                {label: 'Sobrepeso', value: 'sobrepeso'},
+                                {label: "Obesidad 1", value: "obesidad_1"},
+                                {label: "Obesidad 2", value: "obesidad_2"},
+                                {label: "Obesidad 3", value: "obesidad_3"},
+                            ]
+                        },
+                        {
+                            slug: 'hta',
+                            label: 'HTA',
+                            options: [
+                                {label: 'Sí', value: true},
+                                {label: 'No', value: false}
+                            ]
+                        },
+                        {
+                            slug: 'erc',
+                            label: 'ERC',
+                            options: [
+                                {label: 'Sí', value: true},
+                                {label: 'No', value: false}
+                            ]
+                        }
+                    ],
+                    columns: [
+                        {
+                            slug: 'id',
+                            label: '',
+                            type: 'checkbox',
+                            width: 'max-content',
+                            order: false
+                        },
+                        {
+                            slug: 'paciente',
+                            label: 'Paciente',
+                            class: '',
+                            type: 'text',
+                            order: true
+                        },
+                        {
+                            slug: 'diagnostico',
+                            label: 'Diagnóstico',
+                            class: '',
+                            type: 'text',
+                            order: true
+                        },
+                        {
+                            slug: 'ciudad',
+                            label: 'Ciudad',
+                            class: '',
+                            type: 'text',
+                            order: true
+                        },
+                        {
+                            slug: 'riesgo_rcv',
+                            label: 'Riesgo RCV',
+                            class: '',
+                            type: 'state',
+                            order: true
+                        },
+                        {
+                            slug: 'riesgo_tfg',
+                            label: 'Riesgo TFG',
+                            class: '',
+                            type: 'state',
+                            order: true
+                        },
+                        {
+                            slug: 'metas',
+                            label: 'Metas',
+                            class: '',
+                            type: 'text',
+                            order: true
+                        },
+                        {
+                            slug: 'ultimo_seguimiento',
+                            label: 'Último seguimiento',
+                            class: '',
+                            type: 'tag',
+                            order: true
+                        },
+                        {
+                            slug: 'actions',
+                            label: '',
+                            class: '',
+                            type: 'actions',
+                        }
+                    ]
+                }
+            });
+
+            const callbackPacientes = () => {
+                getPacientes(pacientes.getParams())
+            }
+
+            pacientes.$on('filter', callbackPacientes);
+            pacientes.$on('next', callbackPacientes);
+
+            function getPacientes(params) {
+                submitData(
+                    params, 'get'
+                ).then((response) => {
+                    pacientes.updateData(response);
+                }).catch(() => {
+
+                });
+            }
+        });
+    </script>
+{% endblock %}
+

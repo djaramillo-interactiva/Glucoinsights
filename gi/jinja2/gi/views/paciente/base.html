@@ -1,0 +1,25 @@
+{% extends "gi/partials/base.html" %}
+{% import 'gi/app/app.html' as app %}
+
+{% block main %}
+    {% if id_paciente %}
+        <div class="py-1">
+            <blockquote>
+                <div class="box-l sx-2">
+                    <div><h2 class="primary mb-ii">{{ paciente.nombres }} {{ paciente.apellidos }}</h2>
+                        <p>Diagnóstico principal: {{ paciente.tipo_diabetes }}</p></div>
+                    <div class="self-end flex sx-ii">
+                        <div class="state svelte-kguvhh border" style="">
+                            <div class="color-code state-code-{{ paciente.codigo_estado_nivel_riesgo_rcv }} svelte-kguvhh"></div>
+                            <span class="svelte-kguvhh">
+                                <strong>Riesgo Framingham:</strong>
+                                {{ paciente.nivel_riesgo_rcv }}
+                            </span></div>
+                    </div>
+                </div>
+            </blockquote>
+            {# <div id="ficha-paciente" style="min-height: 65px"></div> #}
+        </div>
+    {% endif %}
+    {% include 'gi/views/paciente/nav.html' %}
+{% endblock %}

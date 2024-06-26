@@ -1,0 +1,14 @@
+{% set nav=[
+    {
+        "label":"DASHBOARD",
+        "route":url('gi:variables-clinicas'),
+        "slug":"variables-clinicas"
+    },
+    {
+        "label":"GRUPOS",
+        "route":url('gi:segmentacion-grupos'),
+        "slug":"segmentacion-grupos"
+    }
+] %}
+
+{{ app.nav(data=nav, active=active) }}

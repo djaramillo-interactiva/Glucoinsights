@@ -1,0 +1,53 @@
+{% extends "gi/partials/base.html" %}
+
+{% block header %}
+{% endblock %}
+
+{% block aside %}
+{% endblock %}
+
+{% block main %}
+    <div class="login-background edges-0 fixed box">
+        <div class="back-white radius p-2  min-w-400px max-w-400px blur-shadow">
+            <div class="box mb-15">
+                <img src="{{ static('gi/logo-gluco-insights.svg') }}">
+            </div>
+            <div style=" text-align: center;width: 100%;margin: -20px 0 20px;font-size: 10px;">
+                Versión 1.0.0
+            </div>
+            <form method="post" action="{{ url('gi:login') }}">
+                {{ csrf_input }}
+                <div class="mb-1">
+                    <input name="username" class="naui-input w-100 text-c" type="text" placeholder="Usuario" required>
+                </div>
+                <div class="mb-1">
+                    <input name="password" class="naui-input w-100 text-c" type="password" placeholder="Contraseña"
+                           required>
+                </div>
+                <div class="mb-1">
+                    <button class="btn solid accent w-100 box sx-ii">
+                        <!--i class="fal fa-sign-in"></i-->
+                        <span class="material-icons-outlined accent">login</span>
+                        <span class="white">INGRESAR</span>
+                    </button>
+                </div>
+            </form>
+            {% with messages=get_messages(request) %}
+                {% if messages %}
+                    <div>
+                        {% for message in messages %}
+                            <p class="{{ message.tags }}">{{ message.text }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+            {#<div class="text-c">
+                <div class="btn">
+                    <span>RECUPERAR CONTRASEÑA</span>
+                </div>
+            </div>#}
+        </div>
+    </div>
+{% endblock %}
+
+

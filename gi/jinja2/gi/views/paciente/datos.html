@@ -1,0 +1,37 @@
+{% extends "gi/views/paciente/base.html" %}
+{% import 'gi/app/app.html' as app %}
+
+{% block main %}
+    {{ super() }}
+    <div class="py-15">
+        <div id="paciente-datos-app"></div>
+    </div>
+{% endblock %}
+
+{% block bottom %}
+    {{ super() }}
+    <script>
+        let pacienteDatos;
+        let crearPacienteRoute = '{{ url('gi:crear-datos-paciente') }}';
+        let pacientesDatosRoute = '{{ url('gi:datos-paciente', kwargs={'id_paciente': 0}) }}';
+
+        window.addEventListener('DOMContentLoaded', (event) => {
+            pacienteDatos = new app.pacienteDatos({
+                target: document.getElementById('paciente-datos-app'),
+                props: {
+                    paciente: {{ datos_paciente|safe }},
+                    parametros: {{ parametros|safe }}
+                }
+            });
+
+            pacienteDatos.$on('submit', (event)=>{
+                submitData(event.detail, 'POST', '').then((response) => {
+                    alert('Los datos se almacenaron correctamente');
+                    if(location.pathname === crearPacienteRoute) {
+                        location.href = pacientesDatosRoute.replace('/0', '/'+response.id);
+                    }
+                });
+            })
+        });
+    </script>
+{% endblock %}

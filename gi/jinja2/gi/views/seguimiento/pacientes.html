@@ -1,0 +1,145 @@
+{% extends "gi/partials/base.html" %}
+{% import 'gi/app/app.html' as app %}
+
+{% block main %}
+    {% with active='seguimiento-pacientes' %}
+        {% include 'gi/views/seguimiento/nav.html' %}
+    {% endwith %}
+
+    <div class="py-1">
+        <div id="seguimiento-pacientes-app"></div>
+    </div>
+
+{% endblock %}
+
+{% block bottom %}
+    <script>
+        let pacientes;
+        window.addEventListener('DOMContentLoaded', (event) => {
+            pacientes = new app.pacientes({
+                target: document.querySelector('#seguimiento-pacientes-app'),
+                props: {
+                    data: {{ data|tojson }},
+                    count: {{ total }},
+                    pages: {{ pages }},
+                    cities: {{ cities|tojson }},
+                    diagnoses: {{ diagnoses|tojson }},
+                    paginate: true,
+                    filters: {{ filters|tojson }},
+                    columns: [
+                        {
+                            slug: 'id',
+                            label: '',
+                            type: 'checkbox',
+                            width: 'max-content',
+                            order: false
+                        },
+                        {
+                            slug: 'paciente',
+                            label: 'Paciente',
+                            class: '',
+                            type: 'text',
+                            order: true
+                        },
+                        {
+                            slug: 'diagnostico',
+                            label: 'Diagnóstico',
+                            class: '',
+                            type: 'text',
+                            order: true
+                        },
+                        {
+                            slug: 'ciudad',
+                            label: 'Ciudad',
+                            class: '',
+                            type: 'text',
+                            order: true
+                        },
+                        {
+                            slug: 'riesgo_rcv',
+                            label: 'Riesgo RCV',
+                            class: '',
+                            type: 'state',
+                            order: true
+                        },
+                        {
+                            slug: 'riesgo_tfg',
+                            label: 'Riesgo TFG',
+                            class: '',
+                            type: 'state',
+                            order: true
+                        },
+                        {
+                            slug: 'metas',
+                            label: 'Metas',
+                            class: '',
+                            type: 'text',
+                            order: true
+                        },
+                        {
+                            slug: 'ultimo_seguimiento',
+                            label: 'Último seguimiento',
+                            class: '',
+                            type: 'tag',
+                            order: true
+                        },
+                        {
+                            slug: 'actions',
+                            label: '',
+                            class: '',
+                            type: 'actions',
+                        }
+                    ],
+                    routeCreate: '{{ url('gi:crear-datos-paciente') }}',
+                    groups: {{ grupos | tojson }}
+                }
+            });
+            const callbackPacientes = () => {
+                getPacientes(pacientes.getParams())
+            }
+
+            pacientes.$on('filter', callbackPacientes);
+            pacientes.$on('next', callbackPacientes);
+            pacientes.$on('save', (event) => {
+                submitData(event.detail, 'post')
+                    .then(res => {
+                        alert('Grupos guardados correctamente');
+                    });
+            });
+            pacientes.$on('descargarReporte', (event) => {
+                httpRequest({
+                    url: `{{ url('gi:descargar-base-datos') }}`,
+                    method: 'GET',
+                    data: {
+                        ...event.detail,
+                        filename: 'ReportePacientes'
+                    }
+                }).then(res => {
+                    return res.blob();
+                }).then(blob => {
+                    let anchor = document.createElement('a');
+                    anchor.setAttribute('href', URL.createObjectURL(blob));
+                    anchor.setAttribute('download', 'ReportePacientes.xlsx')
+                    document.body.appendChild(anchor);
+                    anchor.click();
+                    document.body.removeChild(anchor);
+                });
+            })
+
+            function getPacientes(params) {
+                httpRequest({
+                    url: `{{ url('gi:api-seguimiento-pacientes') }}`,
+                    method: 'GET',
+                    data: params
+                }).then((response) => response.json()).then((response) => {
+                    pacientes.updateData(response);
+                }).catch(() => {
+
+                });
+            }
+        });
+    </script>
+{% endblock %}
+
+
+

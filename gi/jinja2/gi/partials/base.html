@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <title>Glucoinsights</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="{{ static('gi/favicon-gi.png') }}"/>
+    <link rel="canonical" href="">
+    {# Stylesheets #}
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Roboto:wght@100;300&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp&display=block"
+          rel="stylesheet">
+    {# <link rel="stylesheet" href="{{ static('gi/font-awesome/css/all.css') }}"> #}
+    <link rel="stylesheet" href="{{ static('gi/css/lib/naui.min.css') }}">
+    <link rel="stylesheet" href="{{ static('gi/css/lib/astillero/astillero.css') }}">
+    <link rel="stylesheet" href="{{ static('gi/css/lib/astillero/theme.css') }}">
+    <link rel="stylesheet" href="{{ static('gi/css/styles.css') }}">
+    <link rel="stylesheet" href="{{ static('svelte/bundle.css') }}">
+    <script src="{{ static('gi/js/http.js') }}?v=2022-02-09"></script>
+    <script defer src="{{ static('svelte/bundle.js') }}"></script>
+</head>
+<body>
+<style>
+    .mainLayout {
+        display: grid;
+        grid-template-columns: 65px 1fr;
+        grid-template-areas: 'aside header''aside main';
+        grid-template-rows: 50px auto;
+    }
+
+    .mainLayout aside {
+        grid-area: aside;
+    }
+
+    .mainLayout header {
+        grid-area: header;
+    }
+
+    .mainLayout main {
+        grid-area: main;
+    }
+</style>
+<div class="mainLayout">
+    {% block header %}
+        {% include 'gi/partials/header.html' %}
+    {% endblock %}
+
+    {% block aside %}
+        {% include 'gi/partials/aside.html' %}
+    {% endblock %}
+
+    <main>
+        <div class="pb-15 pt-ii px-1">
+            {% block main %}
+
+            {% endblock %}
+        </div>
+    </main>
+</div>
+{% block bottom %}
+{% endblock %}
+
+</body>
+
+</html>
+
+
+

@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Grupo lorem ipsum",
+    "slug": "grupo-1",
+    "route": "/seguimiento/grupos/1",
+    "count": 20
+  },
+  {
+    "name": "Grupo lorem ipsum",
+    "slug": "grupo-2",
+    "route": "/seguimiento/grupos/1",
+    "count": 20
+  },
+  {
+    "name": "Grupo lorem ipsum",
+    "slug": "grupo-3",
+    "route": "/seguimiento/grupos/1",
+    "count": 20
+  },
+  {
+    "name": "Grupo lorem ipsum",
+    "slug": "grupo-4",
+    "route": "/seguimiento/grupos/1",
+    "count": 20
+  },
+  {
+    "name": "Grupo lorem ipsum",
+    "slug": "grupo-5",
+    "route": "/seguimiento/grupos/1",
+    "count": 20
+  },
+  {
+    "name": "Grupo lorem ipsum",
+    "slug": "grupo-6",
+    "route": "/seguimiento/grupos/1",
+    "count": 20
+  },
+  {
+    "name": "Grupo lorem ipsum",
+    "slug": "grupo-7",
+    "route": "/seguimiento/grupos/1",
+    "count": 20
+  }
+]

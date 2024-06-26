@@ -1,0 +1,28 @@
+{% extends "gi/partials/base.html" %}
+{% import 'gi/app/app.html' as app %}
+
+{% block main %}
+    {% include 'gi/views/indicadores/nav.html' %}
+    <div class="py-1">
+        <div id="indicadores-app"></div>
+    </div>
+    <div class="py-1">
+        <div id="pacientes-app"></div>
+    </div>
+{% endblock %}
+
+{% block bottom %}
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+
+            indicadoresApp = new app.indicadoresPoblacion({
+                target: document.getElementById('indicadores-app'),
+                props: {
+                    filters: {{ filters|tojson }},
+                    groups: {{ groups|tojson }},
+                    httpRequest: httpPromise
+                }
+            });
+        });
+    </script>
+{% endblock %}

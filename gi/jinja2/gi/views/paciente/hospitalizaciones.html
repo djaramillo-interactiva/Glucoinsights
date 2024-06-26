@@ -1,0 +1,108 @@
+{% extends "gi/views/paciente/base.html" %}
+{% import 'gi/app/app.html' as app %}
+
+{% block main %}
+    {{ super() }}
+    <div id="paciente-hospitalizaciones-app"></div>
+{% endblock %}
+
+{% block bottom %}
+    {{ super() }}
+    <script>
+        let pacienteHospitalizaciones;
+        window.addEventListener('DOMContentLoaded', (event) => {
+            pacienteHospitalizaciones = new app.pacienteHospitalizaciones({
+                target: document.getElementById('paciente-hospitalizaciones-app'),
+                props: {
+                    data: {{ data|tojson }},
+                    tiposHospitalizaciones: {{ tipos_hospitalizaciones|tojson }},
+                    diagnosticos: {{ diagnosticos|tojson }},
+                    filters: [
+                        {
+                            label: 'Tipos de hospitalizaciones',
+                            slug: 'tipo_hospitalizacion',
+                            options: {{ tipos_hospitalizaciones|tojson }}
+                        },
+                        {
+                            label: 'Periodo',
+                            slug: 'periodo',
+                            options: [
+                                {
+                                    label: 'Mes actual',
+                                    value: 'mes_actual'
+                                },
+                                {
+                                    label: 'Mes anterior',
+                                    value: 'mes_anterior'
+                                },
+                                {
+                                    label: 'Trimestre actual',
+                                    value: 'trimestre_actual'
+                                },
+                                {
+                                    label: 'Trimestre anterior',
+                                    value: 'trimestre_anterior'
+                                },
+                                {
+                                    label: 'Año actual',
+                                    value: 'anio_actual'
+                                },
+                                {
+                                    label: 'Año anterior',
+                                    value: 'anio_anterior'
+                                },
+                            ]
+                        },
+                        {
+                            label: '¿Era evitable?',
+                            slug: 'era_evitable',
+                            options: [
+                                {
+                                    label: 'Sí',
+                                    value: true
+                                },
+                                {
+                                    label: 'No',
+                                    value: false
+                                }
+                            ]
+                        },
+                        {
+                            label: '¿Relacionado con diabetes?',
+                            slug: 'relacionado_con_diabetes',
+                            options: [
+                                {
+                                    label: 'Sí',
+                                    value: true
+                                },
+                                {
+                                    label: 'No',
+                                    value: false
+                                }
+                            ]
+                        },
+                        {
+                            label: 'Soporte',
+                            slug: 'tiene_soporte',
+                            options: [
+                                {
+                                    label: 'Sí',
+                                    value: true
+                                },
+                                {
+                                    label: 'No',
+                                    value: false
+                                }
+                            ]
+                        }
+                    ]
+                }
+            });
+            pacienteHospitalizaciones.$on('guardarHospitalizacion', (event)=>{
+                submitData(event.detail, 'POST', '{{ url('gi:hospitalizaciones-paciente', kwargs={'id_paciente': id_paciente}) }}').then((response) => {
+                    pacienteHospitalizaciones.upsertHospitalizacion(response);
+                });
+            });
+        });
+    </script>
+{% endblock %}

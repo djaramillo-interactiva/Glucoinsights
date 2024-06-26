@@ -1,0 +1,9 @@
+{% set nav=[
+    {
+        "label":"INDICADORES",
+        "route":url('gi:indicadores'),
+        "slug":"indicadores"
+    },
+] %}
+
+{{ app.nav(data=nav, active=active) }}

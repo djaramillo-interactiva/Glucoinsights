@@ -1,0 +1,79 @@
+{% extends "gi/views/paciente/base.html" %}
+{% import 'gi/app/app.html' as app %}
+
+{% block main %}
+    {{ super() }}
+    <div id="paciente-controles-app"></div>
+{% endblock %}
+
+{% block bottom %}
+    {{ super() }}
+    <script>
+        let pacienteControles;
+        window.addEventListener('DOMContentLoaded', (event) => {
+            pacienteControles = new app.pacienteControles({
+                target: document.getElementById('paciente-controles-app'),
+                props: {
+                    data: {{ data|tojson }},
+                    tiposControles: {{ tipos_control|tojson }},
+                    filters: [
+                        {
+                            label: 'Tipos de control',
+                            slug: 'tipo_control',
+                            options: {{ tipos_control|tojson }}
+                        },
+                        {
+                            label: 'Periodo',
+                            slug: 'periodo',
+                            options: [
+                                {
+                                    label: 'Mes actual',
+                                    value: 'mes_actual'
+                                },
+                                {
+                                    label: 'Mes anterior',
+                                    value: 'mes_anterior'
+                                },
+                                {
+                                    label: 'Trimestre actual',
+                                    value: 'trimestre_actual'
+                                },
+                                {
+                                    label: 'Trimestre anterior',
+                                    value: 'trimestre_anterior'
+                                },
+                                {
+                                    label: 'Año actual',
+                                    value: 'anio_actual'
+                                },
+                                {
+                                    label: 'Año anterior',
+                                    value: 'anio_anterior'
+                                },
+                            ]
+                        },
+                        {
+                            label: 'Soporte',
+                            slug: 'tiene_soporte',
+                            options: [
+                                {
+                                    label: 'Sí',
+                                    value: true
+                                },
+                                {
+                                    label: 'No',
+                                    value: false
+                                }
+                            ]
+                        }
+                    ]
+                }
+            });
+            pacienteControles.$on('guardarControl', (event)=>{
+                submitData(event.detail, 'POST', '{{ url('gi:controles-paciente', kwargs={'id_paciente': id_paciente}) }}').then((response) => {
+                    pacienteControles.upsertControl(response);
+                });
+            });
+        });
+    </script>
+{% endblock %}
